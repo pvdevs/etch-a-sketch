@@ -2,22 +2,22 @@
     display: flex;
     justify-self: stretch;
     align-items: stretch;
-    outline: solid 4px;
-    outline-offset: -4px; /* this is used to make inner outlines/borders */
+    outline: solid 1px;
+    outline-offset: -1px; /* this is used to make inner outlines/borders */
     flex: auto;
     height: 8px;
     width: 100%;
     background-color: transparent;
 }
-.gridUnity {
+.pixel {
     background-color: transparent;
-    outline: solid 4px;
+    outline: solid 1px;
     flex: auto;
     height: auto;
     width: auto;
 }
 
-.gridFill {
+.pixelFill {
     background-color: black;
 }
 
@@ -28,7 +28,7 @@
     justify-content: center;
     align-items: center;
     width: 500px;
-    height: 400px;
+    height: 500px;
     background-color: gainsboro;
     overflow: hidden;
 }
