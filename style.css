@@ -1,0 +1,37 @@
+.gridRow {
+    display: flex;
+    justify-self: stretch;
+    align-items: stretch;
+    outline: solid 4px;
+    outline-offset: -4px; /* this is used to make inner outlines/borders */
+    flex: auto;
+    height: 8px;
+    width: 100%;
+    background-color: transparent;
+}
+.gridUnity {
+    background-color: transparent;
+    outline: solid 4px;
+    flex: auto;
+    height: auto;
+    width: auto;
+}
+
+.gridFill {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    background-color: gainsboro;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
