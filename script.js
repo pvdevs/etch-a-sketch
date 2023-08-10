@@ -1,6 +1,5 @@
 const container = document.querySelector('.container');
 
-
 function defineGrid(num) {    
     for(i = 0; i < num; i++) {
         const gridRow = document.createElement('div');
@@ -18,14 +17,13 @@ function defineGrid(num) {
             gridUnity.classList.add('gridUnity');
             currentRow.appendChild(gridUnity);
             
-            gridUnity.addEventListener('click', () => {
-                gridUnity.classList.add('gridFill');
+            gridUnity.addEventListener('mouseenter', () => {
+            gridUnity.classList.add('gridFill');
             })           
         }
     }
-    
 
 }
 
-defineGrid(prompt());
-//console.log(grid);
+
+defineGrid(24);
