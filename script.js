@@ -5,6 +5,8 @@ const rainbowButton = document.querySelector('#rainbow');
 const eraserButton = document.querySelector('#eraser');
 const clearButton = document.querySelector('#clear');
 
+const pixelUni = document.querySelectorAll('.pixel')
+
 let mouseDown = false;
 let rangeClick = false;
 let rainbow = false;
@@ -22,8 +24,9 @@ eraserButton.addEventListener('click', (e) => {
 
 // Not working right
 clearButton.addEventListener('click', (e) => {
-    container.replaceChildren();
-})
+    container.replaceChildren()
+    setGrid(rangeInput.value);
+    });
 
 
 function getRandomColor() {
