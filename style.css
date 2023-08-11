@@ -7,26 +7,19 @@
     display: flex;
     justify-self: stretch;
     align-items: stretch;
-    outline: solid 1px;
-    outline-offset: -1px; /* this is used to make inner outlines/borders */
+  /*  outline: solid 1px; */
     flex: auto;
     height: 8px;
     width: 100%;
     background-color: transparent;
 }
 .pixel {
-    background-color: transparent;
+    background-color: white;
     outline: solid 1px;
     flex: auto;
     height: auto;
     width: auto;
 }
-
-.pixelFill {
-    background-color: black;
-    
-}
-
 
 .container {
     display: flex;
@@ -37,6 +30,7 @@
     height: 500px;
     background-color: white;
     overflow: hidden;
+    outline: solid 1px;
 }
 
 a {

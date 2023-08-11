@@ -4,6 +4,8 @@ const rangeInput = document.querySelector('#range');
 const rainbowButton = document.querySelector('#rainbow');
 const eraserButton = document.querySelector('#eraser');
 const clearButton = document.querySelector('#clear');
+const colorButton = document.querySelector('#color');
+const colorPicker = document.querySelector('#color-picker');
 
 const pixelUni = document.querySelectorAll('.pixel')
 
@@ -11,39 +13,46 @@ let mouseDown = false;
 let rangeClick = false;
 let rainbow = false;
 let eraser = false;
+let color = true;
+
+
+colorButton.addEventListener('click', (e) => {
+    color = true;
+    rainbow = false;
+    eraser = false;
+})
 
 rainbowButton.addEventListener('click', (e) => {
     rainbow = true;
+    color = false;
     eraser = false;
 })
 
 eraserButton.addEventListener('click', (e) => {
     eraser = true;
     rainbow = false;
+    color = false;
 })
 
-// Not working right
+
 clearButton.addEventListener('click', (e) => {
     container.replaceChildren()
     setGrid(rangeInput.value);
     });
 
 
-function getRandomColor() {
+function getRainbow(pixel) {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    return randomColor;
+    pixel.setAttribute('style', `background-color: #${randomColor}`);
 }
 
 
-function getRainbow(pixel, cb) {
-    pixel.setAttribute('style', `background-color: #${cb}`);
+
+function setBrush(pixel) {
+    if(rainbow) getRainbow(pixel);
+    else if(eraser)  pixel.style.backgroundColor = '#FFF';
+    else if (color)  pixel.style.backgroundColor = colorPicker.value;
 }
-
-
-function getErased(pixel) {
-   pixel.style.backgroundColor = '#FFF';
-}
-
 
 
 
@@ -55,16 +64,13 @@ function paintGrid(pixel) {
 
     pixel.addEventListener('mousedown', () => {
         mouseDown = true;
-        pixel.classList.add('pixelFill');
+        setBrush(pixel)
     });
 
     // This event is used to keep painting when users keep pressing the click while pass through different pixels
     pixel.addEventListener('mouseover', () => {
         if (mouseDown) {
-            if(rainbow) getRainbow(pixel, getRandomColor());
-            else if(eraser) getErased(pixel);
-            pixel.classList.add('pixelFill');
-            // pixel.setAttribute('style', `background-color: #${getRandomColor()}`) rainbow
+            setBrush(pixel)
         }
     });
 
