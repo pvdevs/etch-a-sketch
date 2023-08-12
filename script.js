@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const grid = document.querySelector('.grid');
 const rangeValue = document.querySelector('.range-value');
 const rangeInput = document.querySelector('#range');
 const rainbowButton = document.querySelector('#rainbow');
@@ -6,6 +6,8 @@ const eraserButton = document.querySelector('#eraser');
 const clearButton = document.querySelector('#clear');
 const colorButton = document.querySelector('#color');
 const colorPicker = document.querySelector('#color-picker');
+const buttons = document.querySelectorAll('.btn')
+const teste = document.querySelector('.test')
 
 const pixelUni = document.querySelectorAll('.pixel')
 
@@ -15,28 +17,41 @@ let rainbow = false;
 let eraser = false;
 let color = true;
 
+function fillButton (button) {
+    buttons.forEach(e => {
+        e.classList.remove('button-clicked')
+    });
+    button.classList.add('button-clicked')
+}
+
 
 colorButton.addEventListener('click', (e) => {
     color = true;
     rainbow = false;
     eraser = false;
+
+    fillButton(colorButton);
 })
 
 rainbowButton.addEventListener('click', (e) => {
     rainbow = true;
     color = false;
     eraser = false;
+
+    fillButton(rainbowButton);
 })
 
 eraserButton.addEventListener('click', (e) => {
     eraser = true;
     rainbow = false;
     color = false;
+
+    fillButton(eraserButton);
 })
 
 
 clearButton.addEventListener('click', (e) => {
-    container.replaceChildren()
+    grid.replaceChildren()
     setGrid(rangeInput.value);
     });
 
@@ -80,8 +95,6 @@ function paintGrid(pixel) {
 }
 
 
-
-
 function setGrid(num) {    
 
     // This loop creates the rows
@@ -89,7 +102,7 @@ function setGrid(num) {
         const gridRow = document.createElement('div');
         gridRow.classList.add('gridRow');
         gridRow.id = `gridRow-${i}`;
-        container.appendChild(gridRow);
+        grid.appendChild(gridRow);
     }
 
     // This loop select the rows to fill
@@ -117,8 +130,8 @@ function setGridRange() {
     })
     rangeInput.addEventListener('mouseup', () => {
         
-        // This is used to reset the container
-        container.replaceChildren();
+        // This is used to reset the grid
+        grid.replaceChildren();
         setGrid(rangeInput.value)
     });
     

@@ -1,13 +1,43 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #0c0c0c;
+}
+
+h1 {
+    font-size: 64px;
+    justify-self: center;
+    padding: 40px;
+    margin: 0;
+}
+
+.range-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.range-value{
+    font-size: 24px
+
+}
+
 .main {
     display: flex;
-    gap: 40px;
+    gap: 48px;
 }
 
 .gridRow {
     display: flex;
     justify-self: stretch;
     align-items: stretch;
-  /*  outline: solid 1px; */
     flex: auto;
     height: 8px;
     width: 100%;
@@ -21,18 +51,97 @@
     width: auto;
 }
 
-.container {
+.grid {
+    padding: 48px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 500px;
+    width: 584px;
+    height: 584px;
     background-color: white;
     overflow: hidden;
-    outline: solid 1px;
+    border: solid 1px;
+    border-radius: 16px;
 }
 
 a {
     text-decoration: none;
+}
+
+#color-picker {
+    -webkit-appearance: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    height: 112px;
+    background-color: transparent;
+}
+
+#color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#color-picker::-webkit-color-swatch {
+    padding: 0;
+    margin: 0;
+/*    border-radius: 8px;   */
+    border: 1px solid #0C0C0C;
+}
+
+.set-grid {
+    width: 292px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ffffff;
+    border: 1px solid #0c0c0c;
+    border-radius: 16px;
+}
+
+
+.button-clicked {
+    background-color: #0c0c0c;
+    color: #fff;
+}
+
+button {
+    appearance: none;
+    padding: 12px 24px;
+    margin: 0;
+    border: 1px solid #0C0C0C;
+    color: #0C0C0C;
+
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    
+}
+
+button:hover {
+    background-color: #0c0c0c;
+    color: #fff;
+
+}
+
+#range {
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    width: 100%;
+    background: #f2f2f2;
+    outline: 1px solid #0C0C0C;
+    outline-offset: -1px;
+}
+
+#range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height : 24px;
+    width: 24px;
+    border-radius: none;
+    background: #0c0c0c;
 }
