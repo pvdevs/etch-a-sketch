@@ -20,6 +20,20 @@ h1 {
 
 a { text-decoration: none; }
 
+.find-me {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.find-me p {
+    margin: 0;
+    font-size: 20px;
+    color: #363636;
+}
+
 .main {
     display: flex;
     gap: 48px;
@@ -140,3 +154,13 @@ button:hover {
     border-radius: none;
     background: #0c0c0c;
 }
+
+.fa-github {
+    color: #363636;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: scale(1.4);
+    color: #000000;
+  }
